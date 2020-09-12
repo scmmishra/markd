@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include markd *.css
+recursive-include markd *.csv
+recursive-include markd *.html
+recursive-include markd *.ico
+recursive-include markd *.js
+recursive-include markd *.json
+recursive-include markd *.md
+recursive-include markd *.png
+recursive-include markd *.py
+recursive-include markd *.svg
+recursive-include markd *.txt
+recursive-exclude markd *.pyc
