@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/scmmishra/markd">
-    <img src=".github/logo-mark.svg" alt="Logo" width="80" height="80">
+    <img src=".github/logo-mark.svg" alt="Logo" width="120" height="80">
   </a>
   <p align="center">
     A simple bookmarking app that you can host yourself.
