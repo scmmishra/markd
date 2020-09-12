@@ -3,18 +3,19 @@ export default async function call(method, args) {
 		args = {};
 	}
 
-	const res = await fetch(`/api/method/${method}`, {
+	const res = await fetch(`/api/method/markd.markd.api.${method}`, {
 		method: 'POST',
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json; charset=utf-8',
-            'X-Frappe-Site-Name': window.location.hostname
+			'X-Frappe-Site-Name': window.location.hostname
 		},
 		body: JSON.stringify(args)
 	});
 
 	if (res.ok) {
 		const data = await res.json();
+		console.log(data)
 		if (data.docs) {
 			return data;
 		}

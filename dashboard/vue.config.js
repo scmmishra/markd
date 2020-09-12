@@ -25,7 +25,7 @@ const serverProxy = {
 	target: `http://localhost:${webserver_port}`,
 	ws: true,
 	changeOrigin: true,
-	router: function(req) {
+	router: function (req) {
 		const site_name = req.headers.host.split(':')[0];
 		return `http://${site_name}:${webserver_port}`;
 	}
@@ -40,7 +40,8 @@ module.exports = {
 		allowedHosts: sites,
 		proxy: {
 			'^/api': serverProxy,
-			'^/assets': serverProxy
+			'^/assets': serverProxy,
+			'^/files': serverProxy
 		}
 	}
 };
