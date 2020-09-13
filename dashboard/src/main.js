@@ -19,11 +19,11 @@ Vue.use(VueTippy, {
 	arrow: true,
 	animation: 'scale',
 	popperOptions: {
-		modifiers: {
-			preventOverflow: {
-				enabled: false
-			}
-		}
+		// modifiers: {
+		// 	preventOverflow: {
+		// 		enabled: false
+		// 	}
+		// }
 	}
 });
 
