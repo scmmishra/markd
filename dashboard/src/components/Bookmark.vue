@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="bg-white shadow hover:shadow-md rounded-lg p-2"
-		@click="$refs.modalName.openModal()"
+		@click="$refs.previewModal.openModal()"
 	>
 		<img
 			:src="mark.image"
@@ -15,15 +15,7 @@
 				{{ mark.website }}
 			</p>
 		</div>
-		<ArticlePreview ref="modalName">
-			<template v-slot:header>
-				{{ mark.meta_title }}
-			</template>
-
-			<template v-slot:body>
-				<div v-html="mark.readable"></div>
-			</template>
-		</ArticlePreview>
+		<ArticlePreview ref="previewModal" :mark="mark" />
 	</div>
 </template>
 <script>

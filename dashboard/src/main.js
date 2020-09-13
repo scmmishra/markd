@@ -6,6 +6,28 @@ import './assets/style.css';
 import call from './assets/call';
 import VueStringFilter from 'vue-string-filter';
 import PortalVue from 'portal-vue'
+import VueTippy, { TippyComponent } from "vue-tippy";
+import Unicon from 'vue-unicons';
+import { uniExternalLinkAlt, uniTrashAlt, uniTimes } from 'vue-unicons/src/icons'
+
+Unicon.add([uniExternalLinkAlt, uniTrashAlt, uniTimes])
+Vue.use(Unicon)
+
+Vue.use(VueTippy, {
+	directive: "tippy", // => v-tippy
+	flipDuration: 0,
+	arrow: true,
+	animation: 'scale',
+	popperOptions: {
+		modifiers: {
+			preventOverflow: {
+				enabled: false
+			}
+		}
+	}
+});
+
+Vue.component("tippy", TippyComponent);
 
 Vue.use(PortalVue)
 
