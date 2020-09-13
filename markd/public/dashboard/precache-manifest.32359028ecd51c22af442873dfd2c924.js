@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e4c3b8f07c4236e3f67c",
+    "revision": "5762d7d1cc6fadf2ccf0",
     "url": "/assets/markd/dashboard/css/app.ece821f8.css"
   },
   {
-    "revision": "ebc2255cd2b779ef49cea0ed4f474f23",
+    "revision": "52ef6d3212f2230223dd049d8d080492",
     "url": "/assets/markd/dashboard/index.html"
   },
   {
-    "revision": "e4c3b8f07c4236e3f67c",
-    "url": "/assets/markd/dashboard/js/app.89702753.js"
+    "revision": "5762d7d1cc6fadf2ccf0",
+    "url": "/assets/markd/dashboard/js/app.5d3fe79f.js"
   },
   {
     "revision": "7ea608f06fe6c4c2a051",
