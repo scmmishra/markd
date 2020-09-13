@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3bb39d10241f614639d9",
-    "url": "/assets/markd/dashboard/css/app.fce77a99.css"
+    "revision": "e4c3b8f07c4236e3f67c",
+    "url": "/assets/markd/dashboard/css/app.ece821f8.css"
   },
   {
-    "revision": "e2d64df98bf7589ad159ae9c15f68752",
+    "revision": "ebc2255cd2b779ef49cea0ed4f474f23",
     "url": "/assets/markd/dashboard/index.html"
   },
   {
-    "revision": "3bb39d10241f614639d9",
-    "url": "/assets/markd/dashboard/js/app.0832023f.js"
+    "revision": "e4c3b8f07c4236e3f67c",
+    "url": "/assets/markd/dashboard/js/app.89702753.js"
   },
   {
-    "revision": "5202c3fbcf290a82c72c",
-    "url": "/assets/markd/dashboard/js/chunk-vendors.34778749.js"
+    "revision": "7ea608f06fe6c4c2a051",
+    "url": "/assets/markd/dashboard/js/chunk-vendors.448aa4f4.js"
   },
   {
     "revision": "af3442210705525bcba5cbbc7e4307bf",

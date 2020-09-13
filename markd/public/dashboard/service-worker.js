@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/assets/markd/dashboard/precache-manifest.ccf79442c0bd2645e36ab96917056feb.js"
+  "/assets/markd/dashboard/precache-manifest.f88b0d35eca65eef6d5eda7b129a2418.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "dashboard"});
