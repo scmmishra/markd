@@ -24,8 +24,19 @@ export default {
 			fetchedData: [],
 		};
 	},
+	methods: {
+		fetch: async function() {
+			this.fetchedData = await this.$call("get_bookmarks");
+		},
+	},
 	async mounted() {
-		this.fetchedData = await this.$call("get_bookmarks");
+		this.fetch();
+	},
+	created() {
+		this.$eventHub.$on("updated-links", this.fetch);
+	},
+	beforeDestroy() {
+		this.$eventHub.$off("updated-links");
 	},
 };
 </script>

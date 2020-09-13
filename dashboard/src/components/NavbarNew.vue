@@ -19,7 +19,7 @@
 				>
 					<!--header-->
 					<div
-						class="flex items-start justify-between px-5 py-3 border-b border-solid border-gray-300 rounded-t"
+						class="flex items-start justify-between px-5 py-3 border-gray-300 rounded-t"
 					>
 						<h3 class="text-xl font-semibold">
 							Add Mark
@@ -40,6 +40,7 @@
 						<input
 							type="text"
 							v-model="url"
+							:disabled="freeze"
 							placeholder="https://getmarkd.app"
 							class="px-3 py-3
 						placeholder-gray-400 text-gray-700 relative bg-gray-200
@@ -51,6 +52,7 @@
 						<button
 							class="text-white bg-teal-500 rounded font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
 							type="button"
+							:disabled="freeze"
 							style="transition: all .15s ease"
 							v-on:click="saveURL()"
 						>
@@ -73,6 +75,7 @@ export default {
 	data() {
 		return {
 			showModal: false,
+			freeze: false,
 			url: "",
 		};
 	},
@@ -81,12 +84,14 @@ export default {
 			this.showModal = !this.showModal;
 		},
 		saveURL: function() {
-			console.log(this.url);
+			this.freeze = true;
 			this.$call("save_mark", {
 				url: this.url,
 			}).then((data) => {
 				if (data) {
-					console.log("DONE");
+					this.freeze = false;
+					this.showModal = false;
+					this.$eventHub.$emit("updated-links");
 				}
 			});
 		},

@@ -24,6 +24,8 @@
 								target="_blank"
 								v-if="mark.website"
 								class="p-2 bg-gray-200 rounded flex items-center"
+								content="Open Website Home"
+								v-tippy
 							>
 								<img
 									v-if="mark.favicon"
@@ -51,8 +53,11 @@
 							<a
 								target="_blank"
 								class="text-gray-400 mr-4 hover:text-red-500 focus:outline-none cursor-pointer"
-								content="Delete Article"
-								v-tippy
+								:content="deleteTipContent"
+								@click="deleteMark"
+								v-tippy="{
+									hideOnClick: false,
+								}"
 							>
 								<unicon
 									name="trash-alt"
@@ -98,6 +103,12 @@
 export default {
 	name: "ArticlePreview",
 	props: ["mark"],
+	data() {
+		return {
+			deleteConfirm: false,
+			deleteTipContent: "Delete Article",
+		};
+	},
 	created() {
 		document.addEventListener("keyup", this.onClose);
 	},
@@ -106,8 +117,21 @@ export default {
 	},
 	methods: {
 		closeModal() {
-			console.log("CLOSe");
 			this.$emit("close");
+		},
+		deleteMark() {
+			if (this.deleteConfirm) {
+				this.$call("delete_mark", {
+					mark: this.mark.name,
+				}).then(() => {
+					this.closeModal();
+					this.$eventHub.$emit("updated-links");
+				});
+			} else {
+				this.deleteTipContent = "Click Again to Confirm";
+				this.deleteConfirm = true;
+				// this.deleteTipTrigger = "mouseover";
+			}
 		},
 		onClose(event) {
 			// Escape key

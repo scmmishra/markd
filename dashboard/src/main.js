@@ -35,6 +35,9 @@ Vue.use(VueStringFilter);
 Vue.prototype.$call = call;
 Vue.config.productionTip = false
 
+Vue.prototype.$eventHub = new Vue(); // Global event bus
+
+
 new Vue({
 	router,
 	render: h => h(App)
