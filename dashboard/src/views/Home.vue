@@ -22,16 +22,10 @@ export default {
 	data() {
 		return {
 			fetchedData: [],
-			bookmarks: [],
 		};
 	},
 	async mounted() {
 		this.fetchedData = await this.$call("get_bookmarks");
-	},
-	watch: {
-		fetchedData: () => {
-			this.bookmarks = this.fetchedData;
-		},
 	},
 };
 </script>

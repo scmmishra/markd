@@ -23,8 +23,9 @@
 						Archive
 					</a>
 				</div>
-				<div>
-					<Search class="mb-3" />
+				<div class="flex">
+					<Search class="mb-3 mr-2" />
+					<NavbarNew class="pt-2" />
 				</div>
 			</div>
 		</div>
@@ -34,11 +35,14 @@
 <script>
 import Logo from "@/components/Logo.vue";
 import Search from "@/components/Search.vue";
+import NavbarNew from "@/components/NavbarNew.vue";
+
 export default {
 	name: "Navbar",
 	components: {
 		Logo,
 		Search,
+		NavbarNew,
 	},
 };
 </script>
