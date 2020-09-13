@@ -89,6 +89,7 @@ export default {
 				url: this.url,
 			}).then((data) => {
 				if (data) {
+					this.url = "";
 					this.freeze = false;
 					this.showModal = false;
 					this.$eventHub.$emit("updated-links");

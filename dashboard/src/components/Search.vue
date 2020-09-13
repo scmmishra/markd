@@ -1,12 +1,27 @@
 <template>
 	<div class="pt-2 relative text-gray-600">
 		<input
-			class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-64"
+			class="search-input relative border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
 			type="search"
+			v-model="searchTerm"
 			name="search"
+			v-debounce:300="search"
 			placeholder="Search"
+			autocomplete="off"
 		/>
-		<div></div>
+		<div
+			class="bg-white absolute search-results p-2 shadow-lg mt-2 rounded-md"
+			v-if="showResult"
+		>
+			<div
+				class="prose prose-xs hover:bg-teal-100 p-2 rounded"
+				v-for="result in searchResults"
+				:key="result.name"
+			>
+				<h4>{{ result.doc.meta_title }}</h4>
+				<p class=" text-xs" v-html="result.content_highlights"></p>
+			</div>
+		</div>
 		<span class="absolute right-0 top-0 mt-5 mr-4">
 			<svg
 				class="text-gray-600 h-4 w-4 fill-current"
@@ -31,11 +46,44 @@
 </template>
 
 <script>
-export default {};
+export default {
+	name: "Search",
+	data() {
+		return {
+			searchResults: [],
+			searchTerm: "",
+			showResult: false,
+		};
+	},
+	methods: {
+		search: async function() {
+			this.searchResults = await this.$call("search", {
+				query: this.searchTerm,
+			});
+			if (this.searchResults.length == 0) {
+				this.showResult = false;
+			} else {
+				this.showResult = true;
+			}
+		},
+	},
+};
 </script>
 
-<style scoped>
-input {
-	width: 320px;
+<style lang="scss">
+.search-results {
+	width: 400px;
+}
+
+.search-input {
+	width: 200px;
+	transition: width 400ms;
+	&:focus {
+		width: 400px;
+	}
+}
+
+.match {
+	color: #38b2ac;
 }
 </style>

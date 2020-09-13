@@ -9255,6 +9255,11 @@ vue-cli-plugin-chakra-ui@~1.0.3:
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-chakra-ui/-/vue-cli-plugin-chakra-ui-1.0.3.tgz#64b7ccbbf6aa900bdfc9b32e4221b09ac5658059"
   integrity sha512-O3vCPZYLIudCCh3ye8cGlkx4w0LX6l+0lJQxhKIHqJFQQKKrCWYM7XcQ9D0My4QYCZrbDZYGxBr+o91afVfu5Q==
 
+vue-debounce@^2.5.7:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/vue-debounce/-/vue-debounce-2.5.7.tgz#4e2aee484ea46be343242639ea56ddcd96ab3431"
+  integrity sha512-weyMz0ee6xHLCJ+HrvfkVUQqBsH7Jx359yLTmfnmpb8fDUD3HZEwd2ZHoq+sZjcYR7JcW7B9FlqjJA2IJXqscg==
+
 vue-eslint-parser@^7.0.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.1.0.tgz#9cdbcc823e656b087507a1911732b867ac101e83"

@@ -13,7 +13,7 @@ import frappe
 from frappe.utils.file_manager import save_file_on_filesystem
 from frappe.model.document import Document
 
-from markd.markd.search import add_item
+from markd.markd.search import add_item, remove_item
 
 class Bookmark(Document):
 	def before_save(self):
@@ -29,7 +29,10 @@ class Bookmark(Document):
 		self.favicon = self.fetch_favicon(response)
 
 	def after_insert(self):
-		frappe.enqueue(add_item, name=self.name)
+		add_item(self.name)
+
+	def on_trash(self):
+		remove_item(self.name)
 
 	def fetch_url_meta(self, response):
 		soup = BeautifulSoup(response.text, features="lxml")

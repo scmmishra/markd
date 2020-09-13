@@ -9,9 +9,13 @@ import PortalVue from 'portal-vue'
 import VueTippy, { TippyComponent } from "vue-tippy";
 import Unicon from 'vue-unicons';
 import { uniExternalLinkAlt, uniTrashAlt, uniTimes } from 'vue-unicons/src/icons'
+import vueDebounce from 'vue-debounce'
 
 Unicon.add([uniExternalLinkAlt, uniTrashAlt, uniTimes])
 Vue.use(Unicon)
+
+Vue.use(vueDebounce)
+
 
 Vue.use(VueTippy, {
 	directive: "tippy", // => v-tippy

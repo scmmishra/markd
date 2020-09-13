@@ -14,6 +14,7 @@
 		"register-service-worker": "^1.7.1",
 		"tailwindcss": "^1.8.8",
 		"vue": "^2.6.11",
+		"vue-debounce": "^2.5.7",
 		"vue-router": "^3.2.0",
 		"vue-string-filter": "^2.1.0",
 		"vue-tippy": "^4.7.0",

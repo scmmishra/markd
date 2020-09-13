@@ -24,7 +24,7 @@ class BookmarkSearch(FullTextSearch):
 		mark = frappe.get_doc("Bookmark", name)
 		return {
 			'name': mark.name,
-			'content': mark.readable
+			'content': strip_html_tags(mark.readable)
 		}
 
 	def parse_result(self, result):
@@ -43,3 +43,7 @@ def build():
 def add_item(name):
 	bms = BookmarkSearch("bookmark-index")
 	return bms.update_index_by_name(name)
+
+def remove_item(name):
+	bms = BookmarkSearch("bookmark-index")
+	return bms.remove_document_from_index(name)

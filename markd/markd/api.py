@@ -22,7 +22,7 @@ def delete_mark(mark):
 	mark = frappe.delete_doc("Bookmark", mark)
 
 @frappe.whitelist()
-def mark_search(query, limit=10):
+def search(query, limit=10):
 	limit = frappe.utils.cint(limit)
 	ws = BookmarkSearch(index_name="bookmark-index")
 	return ws.search(query, limit=limit)
