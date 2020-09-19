@@ -5,7 +5,7 @@
   <p align="center">
     A simple bookmarking app that you can host yourself.
     <br />
-    <a href="demo.getmarkd.app">View Demo</a>
+    <a href="https://markd.frappe.cloud">View Demo</a>
     ·
     <a href="https://github.com/scmmishra/markd/issues/new">Report Bug</a>
     ·
