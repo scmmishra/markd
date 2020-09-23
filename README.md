@@ -11,6 +11,11 @@
     ·
     <a href="https://github.com/scmmishra/markd/issues/new">Request Feature</a>
   </p>
+  <p align="center">
+    <a href="https://fossunited.org/" target="_blank" rel="noopener noreferrer">
+             <img src="http://fossunited.org/files/github-badge.svg" alt="Made at FOSS Hack 2020">
+  </a>
+  </p>
 </p>
 
 <!-- TABLE OF CONTENTS -->
