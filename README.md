@@ -13,8 +13,8 @@
   </p>
   <p align="center">
     <a href="https://fossunited.org/" target="_blank" rel="noopener noreferrer">
-             <img src="http://fossunited.org/files/fossunited-badge.svg" alt="Made at FOSS Hack 2020">
-  </a>
+      <img src="http://fossunited.org/files/fossunited-badge.svg" alt="Supported by FOSSUnited">
+    </a>
   </p>
 </p>
 
