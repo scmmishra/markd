@@ -23,7 +23,7 @@
  "fields": [
   {
    "fieldname": "url",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "URL"
   },
   {
@@ -87,7 +87,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2020-09-12 19:34:46.290055",
+ "modified": "2020-12-22 21:17:05.816747",
  "modified_by": "Administrator",
  "module": "Markd",
  "name": "Bookmark",

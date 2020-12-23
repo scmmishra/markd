@@ -24,7 +24,8 @@ class Bookmark(Document):
 		self.website = urlparse(self.url).netloc
 
 		image = meta.image or meta.get("og:image") or meta.get("twitter:image")
-		self.image = self.save_file(image)
+		if image:
+			self.image = self.save_file(image)
 		self.readable = self.get_readable(response)
 		self.favicon = self.fetch_favicon(response)
 
@@ -47,10 +48,10 @@ class Bookmark(Document):
 
 	def fetch_favicon(self, response):
 		soup = BeautifulSoup(response.text, features="lxml")
-		icon_link = soup.find("link", rel="icon")
-		if not icon_link:
+		icon_link = soup.findAll("link", rel="icon")
+		if len(icon_link) == 0:
 			return
-		icon_link = icon_link['href']
+		icon_link = soup.find("link", rel="icon")['href']
 		netloc = urlparse(self.url).netloc
 		if netloc not in icon_link:
 			icon_link = 'https://' + netloc + icon_link
@@ -64,7 +65,12 @@ class Bookmark(Document):
 	def save_file(self, url):
 		if not url:
 			return
-		urlfile = urllib.request.urlopen(url)
-		name = self.name + frappe.utils.random_string(8) + '.' + url.split('.')[-1].split('?')[0]
-		ico_file = save_file_on_filesystem(name, urlfile.read())
-		return ico_file.get('file_url')
+		try:
+			urlfile = urllib.request.urlopen(url)
+			name = self.name + frappe.utils.random_string(8) + '.' + url.split('.')[-1].split('?')[0]
+			ico_file = save_file_on_filesystem(name, urlfile.read())
+			return ico_file.get('file_url')
+		except Exception as e:
+			frappe.log_error(frappe.get_traceback(), str(e.__class__))
+			return
+		
